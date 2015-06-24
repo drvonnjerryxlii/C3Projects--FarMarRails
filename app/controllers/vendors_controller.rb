@@ -44,6 +44,12 @@ class VendorsController < ApplicationController
     end
   end
 
+  def sales
+    @vendor = Vendor.find(params.permit(:id)[:id])
+    @sales = @vendor.sales
+    raise
+  end
+
   private
 
   def create_params
